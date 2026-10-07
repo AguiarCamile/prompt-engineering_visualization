@@ -1,0 +1,140 @@
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib.ticker import FuncFormatter
+import visual_config as vc
+from google.colab import files
+
+# =========================
+# DADOS
+# =========================
+setores = [
+    "AGRICULTURA E PESCA",
+    "COMÉRCIO E SERVIÇOS",
+    "INDÚSTRIA DE TRANSFORMAÇÃO"
+]
+
+valor_operacao = np.array([15_000_000, 891_000_000, 173_000_000])
+valor_desembolsado = np.array([7_000_000, 481_000_000, 42_000_000])
+
+x = np.arange(len(setores))
+width = 0.35
+
+# =========================
+# FORMATADOR (K / M)
+# =========================
+def formatador(valor, pos):
+    if valor >= 1_000_000:
+        return f"{int(valor/1_000_000)}M"
+    elif valor >= 1_000:
+        return f"{int(valor/1_000)}K"
+    else:
+        return str(int(valor))
+
+# =========================
+# FIGURA
+# =========================
+plt.rcParams["font.family"] = vc.FONTE_FAMILIA
+
+fig, ax = plt.subplots(figsize=vc.FIGSIZE, dpi=vc.DPI)
+fig.patch.set_facecolor(vc.FUNDO)
+ax.set_facecolor(vc.FUNDO)
+
+# Ajuste do quadro
+plt.subplots_adjust(
+    left=vc.AXES["left"],
+    right=vc.AXES["right"],
+    top=vc.AXES["top"],
+    bottom=vc.AXES["bottom"]
+)
+
+# =========================
+# BARRAS
+# =========================
+bars1 = ax.bar(
+    x - width/2,
+    valor_operacao,
+    width,
+    label="Valor da Operação",
+    color=vc.LARANJA
+)
+
+bars2 = ax.bar(
+    x + width/2,
+    valor_desembolsado,
+    width,
+    label="Valor Desembolsado",
+    color=vc.AZUL
+)
+
+# =========================
+# TÍTULOS E RÓTULOS
+# =========================
+ax.set_title(
+    "Comparação de valores da operação e desembolsados",
+    fontsize=vc.FONTE_TITULO,
+    color=vc.TEXTO
+)
+
+ax.set_xlabel("Setor CNAE", fontsize=vc.FONTE_ROTULO, color=vc.TEXTO)
+ax.set_ylabel("Valor", fontsize=vc.FONTE_ROTULO, color=vc.TEXTO)
+
+ax.set_xticks(x)
+ax.set_xticklabels(setores, fontsize=vc.FONTE_TICKS)
+
+# =========================
+# GRID
+# =========================
+ax.yaxis.grid(True, alpha=vc.GRID_ALPHA, color=vc.GRADE)
+ax.set_axisbelow(True)
+
+# =========================
+# FORMATAÇÃO DO EIXO Y
+# =========================
+ax.yaxis.set_major_formatter(FuncFormatter(formatador))
+
+# =========================
+# LEGEND (fora, superior direita)
+# =========================
+legend = ax.legend(
+    title="Nome das medidas",
+    loc="upper left",
+    bbox_to_anchor=(1.02, 1),
+    frameon=False
+)
+
+# =========================
+# RÓTULOS NAS BARRAS
+# =========================
+def formatar_valor_abreviado(valor):
+    if valor >= 1_000_000:
+        return f"R$ {int(valor/1_000_000)}M"
+    elif valor >= 1_000:
+        return f"R$ {int(valor/1_000)}K"
+    else:
+        return f"R$ {int(valor)}"
+
+def adicionar_rotulos(barras):
+    for barra in barras:
+        altura = barra.get_height()
+        ax.annotate(
+            formatar_valor_abreviado(altura),
+            xy=(barra.get_x() + barra.get_width()/2, altura),
+            xytext=(0, vc.OFFSET_ANOTACAO_Y),
+            textcoords="offset points",
+            ha="center",
+            fontsize=vc.FONTE_ANOTACAO,
+            color=vc.TEXTO
+        )
+
+adicionar_rotulos(bars1)
+adicionar_rotulos(bars2)
+
+# =========================
+# EXPORTAÇÃO SVG
+# =========================
+arquivo = 'barras_comp.svg'
+plt.savefig(arquivo, format="svg")
+plt.show()
+plt.close()
+
+files.download(arquivo)

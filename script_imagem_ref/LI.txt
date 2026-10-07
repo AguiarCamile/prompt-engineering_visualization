@@ -1,0 +1,119 @@
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib.ticker import FuncFormatter
+import visual_config as vc
+from google.colab import files
+
+# =========================
+# DADOS
+# =========================
+anos = np.array([2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025])
+
+desembolsos = np.array([
+    81_000_000,
+    41_000_000,
+    506_000,
+    4_000_000,
+    4_000_000,
+    63_000,
+    313_000_000,
+    85_000_000
+])
+
+# =========================
+# FORMATADOR (M)
+# =========================
+def formatador(valor, pos):
+    if valor >= 1_000_000:
+        return f"{int(valor/1_000_000)}M"
+    else:
+        return "0"
+
+# =========================
+# FIGURA
+# =========================
+plt.rcParams["font.family"] = vc.FONTE_FAMILIA
+
+fig, ax = plt.subplots(figsize=vc.FIGSIZE, dpi=vc.DPI)
+
+fig.patch.set_facecolor(vc.FUNDO)
+ax.set_facecolor(vc.FUNDO)
+
+plt.subplots_adjust(
+    left=vc.AXES["left"],
+    right=vc.AXES["right"],
+    top=vc.AXES["top"],
+    bottom=vc.AXES["bottom"]
+)
+
+# =========================
+# LINHA
+# =========================
+ax.plot(
+    anos,
+    desembolsos,
+    marker='o',
+    linestyle='-',
+    linewidth=1.5,
+    color=vc.VERMELHO
+)
+
+# =========================
+# TÍTULO
+# =========================
+ax.set_title(
+    "Identificação dos desembolsos por ano",
+    fontsize=vc.FONTE_TITULO,
+    color=vc.TEXTO
+)
+
+# =========================
+# EIXOS
+# =========================
+ax.set_xlabel("Ano", fontsize=vc.FONTE_ROTULO)
+ax.set_ylabel("Valor de desembolsos em R$", fontsize=vc.FONTE_ROTULO)
+
+ax.set_xticks(anos)
+
+# =========================
+# GRID (bem leve, igual referência)
+# =========================
+ax.grid(True, which='major', linestyle='-', linewidth=0.5, alpha=0.3)
+
+# =========================
+# EIXO Y
+# =========================
+ax.set_ylim(0, 330_000_000)
+ax.set_yticks(np.arange(0, 331_000_000, 50_000_000))
+ax.yaxis.set_major_formatter(FuncFormatter(formatador))
+
+# =========================
+# RÓTULOS NOS PONTOS
+# =========================
+def formatar_valor(v):
+    if v >= 1_000_000:
+        return f"{int(v/1_000_000)}M"
+    elif v >= 1_000:
+        return f"{int(v/1_000)}K"
+    else:
+        return str(int(v))
+
+for i in range(len(anos)):
+    ax.annotate(
+        formatar_valor(desembolsos[i]),
+        (anos[i], desembolsos[i]),
+        textcoords="offset points",
+        xytext=(0, 6),
+        ha='center',
+        fontsize=vc.FONTE_ANOTACAO
+    )
+
+# =========================
+# EXPORTAÇÃO SVG
+# =========================
+arquivo = "linhas_id.svg"
+plt.savefig(arquivo, format="svg")
+plt.show()
+plt.close()
+
+files.download(arquivo)

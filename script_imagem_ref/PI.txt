@@ -1,0 +1,101 @@
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib.ticker import FuncFormatter
+import visual_config as vc
+from google.colab import files
+
+# =========================
+# DADOS (exemplo coerente com a figura)
+# =========================
+valor_operacao = np.array([
+    8980819, 28078287, 86575056, 748947, 12087300,
+    133154218, 4672753, 9500000, 44730617, 14943855,
+    43135458, 31175400, 11123995, 2630000, 19500000,
+    27809987, 890000, 42867720, 6638370, 77151405,
+    50000000, 294649485, 41495746, 2164000, 7025148,
+    43398947, 25490198, 8000000
+])
+
+juros = np.array([
+    3.90, 4.00, 4.03, 4.40, 4.50,
+    8.93, 9.14, 9.25, 9.50, 9.56,
+    9.57, 9.61, 9.72, 9.78, 9.79,
+    10.04, 10.08, 10.14, 10.28, 10.33,
+    10.53, 10.69, 11.70, 11.81, 12.25,
+    12.58, 13.25, 13.81
+])
+
+# =========================
+# FORMATADOR (M)
+# =========================
+def formatador(valor, pos):
+    if valor == 0:
+        return "0"
+    elif valor >= 1_000_000:
+        return f"{int(valor/1_000_000)}M"
+    else:
+        return ""
+
+# =========================
+# FIGURA
+# =========================
+plt.rcParams["font.family"] = vc.FONTE_FAMILIA
+
+fig, ax = plt.subplots(figsize=vc.FIGSIZE, dpi=vc.DPI)
+
+fig.patch.set_facecolor(vc.FUNDO)
+ax.set_facecolor(vc.FUNDO)
+
+plt.subplots_adjust(
+    left=vc.AXES["left"],
+    right=vc.AXES["right"],
+    top=vc.AXES["top"],
+    bottom=vc.AXES["bottom"]
+)
+
+# =========================
+# SCATTER
+# =========================
+ax.scatter(
+    valor_operacao,
+    juros,
+    color=vc.VERMELHO,
+    s=vc.TAMANHO_PONTO
+)
+
+# =========================
+# TÍTULO
+# =========================
+ax.set_title(
+    "Operação por juros",
+    fontsize=vc.FONTE_TITULO,
+    color=vc.TEXTO
+)
+
+# =========================
+# EIXOS
+# =========================
+ax.set_xlabel("Valor da operação", fontsize=vc.FONTE_ROTULO)
+ax.set_ylabel("Juros", fontsize=vc.FONTE_ROTULO)
+
+# =========================
+# GRID (igual referência)
+# =========================
+ax.grid(True, which='major', linestyle='-', linewidth=0.5, alpha=0.3)
+
+# =========================
+# EIXO X FORMATADO
+# =========================
+ax.set_xlim(-10_000_000, 310_000_000)
+ax.set_xticks(np.arange(0, 301_000_000, 50_000_000))
+ax.xaxis.set_major_formatter(FuncFormatter(formatador))
+
+# =========================
+# EXPORTAÇÃO SVG
+# =========================
+arquivo = "pontos_id.svg"
+plt.savefig(arquivo, format="svg")
+plt.show()
+plt.close()
+
+files.download(arquivo)

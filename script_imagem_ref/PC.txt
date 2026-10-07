@@ -1,0 +1,117 @@
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib.ticker import FuncFormatter
+import visual_config as vc
+from google.colab import files
+import pandas as pd
+
+# =========================
+# CARREGAR DADOS
+# =========================
+df = pd.read_excel("DadosTratados_Fundo_Clima_2025.xlsx")
+
+# Debug: Print columns to check for correct name
+# print(df.columns)
+
+# =========================
+# AGRUPAMENTO POR JUROS
+# =========================
+agrupado = df.groupby("Juros").agg({
+    "Valor da Operação em R$": "sum",
+    "Valor Desembolsado R$ (*)": "sum"  # Corrected column name here
+}).reset_index()
+
+juros = agrupado["Juros"].values
+valor_operacao = agrupado["Valor da Operação em R$"].values
+valor_desembolsado = agrupado["Valor Desembolsado R$ (*)"].values # Corrected column name here
+
+# =========================
+# FORMATADOR (M com zero limpo)
+# =========================
+def formatador(valor, pos):
+    if valor == 0:
+        return "0"
+    elif valor >= 1_000_000:
+        return f"{int(valor/1_000_000)}M"
+    return ""
+
+# =========================
+# FIGURA
+# =========================
+plt.rcParams["font.family"] = vc.FONTE_FAMILIA
+
+fig, ax = plt.subplots(figsize=vc.FIGSIZE, dpi=vc.DPI)
+
+fig.patch.set_facecolor(vc.FUNDO)
+ax.set_facecolor(vc.FUNDO)
+
+plt.subplots_adjust(
+    left=vc.AXES["left"],
+    right=vc.AXES["right"],
+    top=vc.AXES["top"],
+    bottom=vc.AXES["bottom"]
+)
+
+# =========================
+# SCATTER (DUAS MEDIDAS)
+# =========================
+ax.scatter(
+    valor_operacao,
+    juros,
+    color=vc.VERMELHO,
+    s=vc.TAMANHO_PONTO,
+    label="Valor da Operação"
+)
+
+ax.scatter(
+    valor_desembolsado,
+    juros,
+    color=vc.AZUL,
+    s=vc.TAMANHO_PONTO,
+    label="Valor Desembolsado"
+)
+
+# =========================
+# TÍTULO
+# =========================
+ax.set_title(
+    "Comparação entre Operação e Desembolsos por Juros",
+    fontsize=vc.FONTE_TITULO,
+    color=vc.TEXTO
+)
+
+# =========================
+# EIXOS
+# =========================
+ax.set_xlabel("Valor (R$)", fontsize=vc.FONTE_ROTULO)
+ax.set_ylabel("Juros", fontsize=vc.FONTE_ROTULO)
+
+# =========================
+# GRID
+# =========================
+ax.grid(True, which='major', linestyle='-', linewidth=0.5, alpha=0.3)
+
+# =========================
+# ESCALA X (igual padrão anterior)
+# =========================
+ax.set_xlim(-10_000_000, 300_000_000)
+ax.set_xticks(np.arange(0, 301_000_000, 50_000_000))
+ax.xaxis.set_major_formatter(FuncFormatter(formatador))
+
+# =========================
+# LEGENDA (FORA)
+# =========================
+ax.legend(
+    loc="upper left",
+    bbox_to_anchor=(1.02, 1)
+)
+
+# =========================
+# EXPORTAÇÃO SVG
+# =========================
+arquivo = "pontos_comp.svg"
+plt.savefig(arquivo, format="svg")
+plt.show()
+plt.close()
+
+files.download(arquivo)

@@ -1,0 +1,111 @@
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib.ticker import FuncFormatter
+import visual_config as vc
+from google.colab import files
+
+# =========================
+# DADOS
+# =========================
+anos = np.array([2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025])
+
+prazo_amortizacao = np.array([85_000_000, 42_000_000, 0, 3_000_000, 4_000_000, 0, 320_000_000, 620_000_000])
+prazo_carencia = np.array([80_000_000, 40_000_000, 0, 2_000_000, 3_000_000, 0, 310_000_000, 85_000_000])
+
+# =========================
+# FORMATADOR (K + CENTENA)
+# =========================
+def formatador(valor, pos):
+    if valor >= 1_000_000:
+        return f"{int(valor/1_000_000)}M"
+    else:
+        return "0"
+
+# =========================
+# FIGURA
+# =========================
+plt.rcParams["font.family"] = vc.FONTE_FAMILIA
+
+fig, ax = plt.subplots(figsize=vc.FIGSIZE, dpi=vc.DPI)
+
+fig.patch.set_facecolor(vc.FUNDO)
+ax.set_facecolor(vc.FUNDO)
+
+plt.subplots_adjust(
+    left=vc.AXES["left"],
+    right=vc.AXES["right"],
+    top=vc.AXES["top"],
+    bottom=vc.AXES["bottom"]
+)
+
+# =========================
+# LINHAS (estilo igual ao original)
+# =========================
+ax.plot(
+    anos,
+    prazo_amortizacao,
+    marker='o',
+    linestyle='-',
+    linewidth=1.5,
+    color=vc.LARANJA,
+    label="Valor da Operação"
+)
+
+ax.plot(
+    anos,
+    prazo_carencia,
+    marker='o',
+    linestyle='-',
+    linewidth=1.5,
+    color=vc.AZUL,
+    label="Valor desembolsado"
+)
+
+# =========================
+# TÍTULO
+# =========================
+ax.set_title(
+    "Comparação entre Operação e Desembolsos ao longo dos anos",
+    fontsize=vc.FONTE_TITULO,
+    color=vc.TEXTO
+)
+
+# =========================
+# EIXOS
+# =========================
+ax.set_xlabel("Ano", fontsize=vc.FONTE_ROTULO)
+ax.set_ylabel("Valor (R$)", fontsize=vc.FONTE_ROTULO)
+
+ax.set_xticks(anos)
+
+# =========================
+# GRID (igual referência)
+# =========================
+ax.grid(True, which='major', linestyle='-', linewidth=0.5, alpha=0.3)
+
+# =========================
+# EIXO Y
+# =========================
+ax.set_ylim(0, 650_000_000)
+ax.set_yticks(np.arange(0, 650_000_001, 100_000_000))
+ax.yaxis.set_major_formatter(FuncFormatter(formatador))
+
+# =========================
+# LEGENDA (fora igual referência)
+# =========================
+ax.legend(
+    title="Nome das medidas",
+    loc="upper left",
+    bbox_to_anchor=(1.02, 1)
+)
+
+
+# =========================
+# EXPORTAÇÃO SVG
+# =========================
+arquivo = "linhas_comp.svg"
+plt.savefig(arquivo, format="svg")
+plt.show()
+plt.close()
+
+files.download(arquivo)

@@ -1,0 +1,145 @@
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib.ticker import FuncFormatter
+import visual_config as vc
+from google.colab import files
+
+# =========================
+# DADOS
+# =========================
+setores = [
+    "INFRA-ESTRUTURA",
+    "COMERCIO/SERVICOS",
+    "INDUSTRIA",
+    "AGROPECUÁRIA"
+]
+
+valores = np.array([702_000_000, 189_000_000, 173_000_000, 15_000_000])
+
+x = np.arange(len(setores))
+
+# =========================
+# DEFINIÇÃO DE CORES POR FAIXA
+# =========================
+def definir_cor(valor):
+    if valor <= 500_000:
+        return vc.AZUL
+    elif valor <= 300_000_000:
+        return vc.VERDE
+    elif valor <= 600_000_000:
+        return vc.ROXO
+    else:
+        return vc.VERMELHO
+
+cores = [definir_cor(v) for v in valores]
+
+# =========================
+# FORMATADOR (K / M)
+# =========================
+def formatador(valor, pos):
+    if valor >= 1_000_000:
+        return f"{int(valor/1_000_000)}M"
+    elif valor >= 1_000:
+        return f"{int(valor/1_000)}K"
+    else:
+        return str(int(valor))
+
+# =========================
+# FIGURA
+# =========================
+plt.rcParams["font.family"] = vc.FONTE_FAMILIA
+
+fig, ax = plt.subplots(figsize=vc.FIGSIZE, dpi=vc.DPI)
+fig.patch.set_facecolor(vc.FUNDO)
+ax.set_facecolor(vc.FUNDO)
+
+plt.subplots_adjust(
+    left=vc.AXES["left"],
+    right=vc.AXES["right"],
+    top=vc.AXES["top"],
+    bottom=vc.AXES["bottom"]
+)
+
+# =========================
+# BARRAS
+# =========================
+bars = ax.bar(x, valores, color=cores)
+
+# =========================
+# TÍTULOS E RÓTULOS
+# =========================
+ax.set_title(
+    "Valor da operação em relação ao setor",
+    fontsize=vc.FONTE_TITULO,
+    color=vc.TEXTO
+)
+
+ax.set_xlabel("Setor BNDES", fontsize=vc.FONTE_ROTULO, color=vc.TEXTO)
+ax.set_ylabel("Valor da Operação", fontsize=vc.FONTE_ROTULO, color=vc.TEXTO)
+
+ax.set_xticks(x)
+ax.set_xticklabels(setores, fontsize=vc.FONTE_TICKS)
+
+# =========================
+# GRID
+# =========================
+ax.yaxis.grid(True, alpha=vc.GRID_ALPHA, color=vc.GRADE)
+ax.set_axisbelow(True)
+
+# =========================
+# EIXO Y FORMATADO
+# =========================
+ax.yaxis.set_major_formatter(FuncFormatter(formatador))
+
+# =========================
+# LEGENDA CUSTOMIZADA
+# =========================
+from matplotlib.patches import Patch
+
+legend_elements = [
+    Patch(facecolor=vc.AZUL, label="Até R$ 500 mil"),
+    Patch(facecolor=vc.VERDE, label="R$ 500 mil – 300 milhões"),
+    Patch(facecolor=vc.ROXO, label="300 – 600 milhões"),
+    Patch(facecolor=vc.VERMELHO, label="Acima de R$ 600 milhões"),
+]
+
+ax.legend(
+    handles=legend_elements,
+    title="Faixa de valores",
+    loc="upper left",
+    bbox_to_anchor=(1.02, 1),
+    frameon=False
+)
+
+# =========================
+# RÓTULOS NAS BARRAS (abreviado)
+# =========================
+def formatar_valor(valor):
+    if valor >= 1_000_000:
+        return f"R$ {int(valor/1_000_000)}M"
+    elif valor >= 1_000:
+        return f"R$ {int(valor/1_000)}K"
+    else:
+        return f"R$ {int(valor)}"
+
+for barra in bars:
+    altura = barra.get_height()
+    ax.annotate(
+        formatar_valor(altura),
+        xy=(barra.get_x() + barra.get_width()/2, altura),
+        xytext=(0, vc.OFFSET_ANOTACAO_Y),
+        textcoords="offset points",
+        ha="center",
+        fontsize=vc.FONTE_ANOTACAO,
+        color=vc.TEXTO
+    )
+
+# =========================
+# EXPORTAÇÃO SVG
+# =========================
+arquivo = "barras_id.svg"
+plt.savefig(arquivo, format="svg")
+plt.show()
+plt.close()
+
+files.download(arquivo)
