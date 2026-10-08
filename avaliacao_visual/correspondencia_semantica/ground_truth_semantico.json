@@ -1,0 +1,254 @@
+{
+  "LI": [
+    {
+      "id": "LI-01",
+      "pergunta": "Valor desembolsado em 2018",
+      "resposta": "81.301.971"
+    },
+    {
+      "id": "LI-02",
+      "pergunta": "Valor desembolsado em 2020",
+      "resposta": "506.384"
+    },
+    {
+      "id": "LI-03",
+      "pergunta": "Valor desembolsado em 2024",
+      "resposta": "313.286.654"
+    },
+    {
+      "id": "LI-04",
+      "pergunta": "Ano com maior desembolso",
+      "resposta": "2024"
+    },
+    {
+      "id": "LI-05",
+      "pergunta": "Ano com menor desembolso",
+      "resposta": "2023"
+    },
+    {
+      "id": "LI-06",
+      "pergunta": "2024 apresenta valor maior que 2025?",
+      "resposta": "verdadeiro"
+    },
+    {
+      "id": "LI-07",
+      "pergunta": "2018 apresenta valor maior que 2019?",
+      "resposta": "verdadeiro"
+    },
+    {
+      "id": "LI-08",
+      "pergunta": "Intervalo de maior aumento consecutivo",
+      "resposta": "2023–2024"
+    }
+  ],
+  "LC": [
+    {
+      "id": "LC-01",
+      "pergunta": "Valor da Operação em 2018",
+      "resposta": "85.591.473"
+    },
+    {
+      "id": "LC-02",
+      "pergunta": "Valor Desembolsado em 2024",
+      "resposta": "313.286.654"
+    },
+    {
+      "id": "LC-03",
+      "pergunta": "Valor da Operação em 2025",
+      "resposta": "617.814.204"
+    },
+    {
+      "id": "LC-04",
+      "pergunta": "Maior série em 2024",
+      "resposta": "Operação"
+    },
+    {
+      "id": "LC-05",
+      "pergunta": "Maior série em 2025",
+      "resposta": "Operação"
+    },
+    {
+      "id": "LC-06",
+      "pergunta": "Anos dos máximos das duas séries",
+      "resposta": "Operação=2025; Desembolso=2024"
+    },
+    {
+      "id": "LC-07",
+      "pergunta": "Ano de maior diferença entre séries",
+      "resposta": "2025"
+    },
+    {
+      "id": "LC-08",
+      "pergunta": "As séries mudam na mesma direção de 2024 para 2025?",
+      "resposta": "não; Operação ↑; Desembolso ↓"
+    }
+  ],
+  "BI": [
+    {
+      "id": "BI-01",
+      "pergunta": "Operação em Infraestrutura",
+      "resposta": "701.842.439"
+    },
+    {
+      "id": "BI-02",
+      "pergunta": "Operação em Comércio/Serviços",
+      "resposta": "188.745.781"
+    },
+    {
+      "id": "BI-03",
+      "pergunta": "Operação em Agropecuária",
+      "resposta": "15.124.405"
+    },
+    {
+      "id": "BI-04",
+      "pergunta": "Setor de maior valor",
+      "resposta": "Infraestrutura"
+    },
+    {
+      "id": "BI-05",
+      "pergunta": "Setor de menor valor",
+      "resposta": "Agropecuária"
+    },
+    {
+      "id": "BI-06",
+      "pergunta": "Comércio/Serviços é maior que Indústria?",
+      "resposta": "verdadeiro"
+    },
+    {
+      "id": "BI-07",
+      "pergunta": "Ordenação decrescente dos setores",
+      "resposta": "Infra > Comércio > Indústria > Agro"
+    },
+    {
+      "id": "BI-08",
+      "pergunta": "Setor acima de 600 milhões",
+      "resposta": "Infraestrutura"
+    }
+  ],
+  "BC": [
+    {
+      "id": "BC-01",
+      "pergunta": "Operação em Comércio e Serviços",
+      "resposta": "890.588.220"
+    },
+    {
+      "id": "BC-02",
+      "pergunta": "Desembolso em Comércio e Serviços",
+      "resposta": "480.839.451"
+    },
+    {
+      "id": "BC-03",
+      "pergunta": "Operação em Indústria de Transformação",
+      "resposta": "172.905.086"
+    },
+    {
+      "id": "BC-04",
+      "pergunta": "Maior medida em Agropecuária e Pesca",
+      "resposta": "Operação"
+    },
+    {
+      "id": "BC-05",
+      "pergunta": "Maior medida em Indústria de Transformação",
+      "resposta": "Operação"
+    },
+    {
+      "id": "BC-06",
+      "pergunta": "Categoria com maior Operação",
+      "resposta": "Comércio e Serviços"
+    },
+    {
+      "id": "BC-07",
+      "pergunta": "Ranking do Desembolso",
+      "resposta": "Comércio > Indústria > Agro"
+    },
+    {
+      "id": "BC-08",
+      "pergunta": "Operação é maior que Desembolso em todas as categorias?",
+      "resposta": "verdadeiro"
+    }
+  ],
+  "SI": [
+    {
+      "id": "SI-01",
+      "pergunta": "Operação em juros de 10,69%",
+      "resposta": "294.649.485"
+    },
+    {
+      "id": "SI-02",
+      "pergunta": "Operação em juros de 8,93%",
+      "resposta": "133.154.218"
+    },
+    {
+      "id": "SI-03",
+      "pergunta": "Operação em juros de 4,03%",
+      "resposta": "86.575.056"
+    },
+    {
+      "id": "SI-04",
+      "pergunta": "Taxa associada ao maior valor",
+      "resposta": "10,69%"
+    },
+    {
+      "id": "SI-05",
+      "pergunta": "Maior taxa representada",
+      "resposta": "13,81%"
+    },
+    {
+      "id": "SI-06",
+      "pergunta": "Operação em 8,93% é maior que em 4,03%?",
+      "resposta": "verdadeiro"
+    },
+    {
+      "id": "SI-07",
+      "pergunta": "Ranking entre 10,69%, 8,93% e 4,03%",
+      "resposta": "10,69 > 8,93 > 4,03"
+    },
+    {
+      "id": "SI-08",
+      "pergunta": "Entre taxas >12%, qual apresenta maior Operação?",
+      "resposta": "12,58%"
+    }
+  ],
+  "SC": [
+    {
+      "id": "SC-01",
+      "pergunta": "Operação em 10,69%",
+      "resposta": "294.649.485"
+    },
+    {
+      "id": "SC-02",
+      "pergunta": "Desembolso em 8,93%",
+      "resposta": "133.154.218"
+    },
+    {
+      "id": "SC-03",
+      "pergunta": "Desembolso em 10,69%",
+      "resposta": "25.200.000"
+    },
+    {
+      "id": "SC-04",
+      "pergunta": "Maior medida em 10,69%",
+      "resposta": "Operação"
+    },
+    {
+      "id": "SC-05",
+      "pergunta": "Em 10,14%, Operação é maior que Desembolso?",
+      "resposta": "verdadeiro"
+    },
+    {
+      "id": "SC-06",
+      "pergunta": "Taxas dos máximos das duas medidas",
+      "resposta": "Operação=10,69%; Desembolso=8,93%"
+    },
+    {
+      "id": "SC-07",
+      "pergunta": "Existe alguma taxa em que Operação > Desembolso?",
+      "resposta": "verdadeiro"
+    },
+    {
+      "id": "SC-08",
+      "pergunta": "Taxa com maior diferença Operação–Desembolso",
+      "resposta": "10,69%"
+    }
+  ]
+}

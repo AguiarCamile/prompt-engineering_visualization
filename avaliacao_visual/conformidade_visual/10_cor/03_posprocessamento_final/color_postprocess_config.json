@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "deltaE00_equivalence_threshold": 2.0,
+  "threshold_role": "Limiar operacional de equivalência cromática para pós-processamento. É usado para color_match e para separar extras near-duplicate de candidatos a cores semanticamente adicionais.",
+  "rules": {
+    "near_duplicate": "EXTRA cuja menor ΔE00 para uma cor observada já pareada na mesma imagem seja <= threshold.",
+    "semantic_extra_candidate": "EXTRA que não pode ser explicado como near-duplicate.",
+    "strict_color_match": "Sem NO_MARK, MISSING_COLOR, EXTRA_COLOR, INTERNAL_VARIATION e sem Dmax acima do threshold.",
+    "overlap_derived": "Mantido apenas como diagnóstico e excluído previamente do pareamento pela L-Cor V4."
+  }
+}

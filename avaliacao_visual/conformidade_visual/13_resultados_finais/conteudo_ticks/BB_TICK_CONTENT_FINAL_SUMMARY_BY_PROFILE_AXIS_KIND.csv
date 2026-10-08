@@ -1,0 +1,13 @@
+﻿profile,axis,kind,n_total,eligible,conforming,nonconforming,unevaluable,conformity_rate
+BC,CATEGORICAL,categorical,120,114,73,41,6,0.6403508771929824
+BC,Y,numeric,120,120,116,4,0,0.9666666666666667
+BI,CATEGORICAL,categorical,160,148,121,27,12,0.8175675675675675
+BI,Y,numeric,20,20,19,1,0,0.95
+LC,X,temporal,280,280,280,0,0,1.0
+LC,Y,numeric,80,80,80,0,0,1.0
+LI,X,temporal,260,260,260,0,0,1.0
+LI,Y,numeric,80,80,55,25,0,0.6875
+SC,X,numeric,80,80,77,3,0,0.9625
+SC,Y,numeric,40,40,40,0,0,1.0
+SI,X,numeric,90,90,76,14,0,0.8444444444444444
+SI,Y,numeric,50,50,31,19,0,0.62

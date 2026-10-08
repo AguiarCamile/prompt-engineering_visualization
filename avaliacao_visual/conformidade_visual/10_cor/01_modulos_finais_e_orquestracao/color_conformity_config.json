@@ -1,0 +1,43 @@
+{
+  "version": "1.0",
+  "description": "Configuração normativa da avaliação unificada de conformidade de cor.",
+  "palette_F": {
+    "azul": "#1F4FD8",
+    "verde": "#2E7D32",
+    "amarelo": "#FFFB0D",
+    "laranja": "#EF6C00",
+    "vermelho": "#C62828",
+    "roxo": "#6A1B9A"
+  },
+  "expected_colors_by_profile": {
+    "BI": [
+      "vermelho",
+      "verde"
+    ],
+    "BC": [
+      "laranja",
+      "azul"
+    ],
+    "LI": [
+      "vermelho"
+    ],
+    "LC": [
+      "laranja",
+      "azul"
+    ],
+    "SI": [
+      "vermelho"
+    ],
+    "SC": [
+      "vermelho",
+      "azul"
+    ]
+  },
+  "expected_repeats_per_unit": 10,
+  "notes": [
+    "A paleta F e as cores esperadas são separadas da etapa de extração.",
+    "O pareamento observado-esperado é um-para-um e minimiza a soma de ΔE00.",
+    "Nenhum limiar final de conformidade ΔE00 é aplicado nesta versão.",
+    "Em scatterplots, famílias com variação cromática preservam métricas ponto a ponto."
+  ]
+}

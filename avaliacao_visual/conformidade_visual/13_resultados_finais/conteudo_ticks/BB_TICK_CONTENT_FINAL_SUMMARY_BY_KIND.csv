@@ -1,0 +1,4 @@
+﻿kind,n_total,eligible,conforming,nonconforming,unevaluable,conformity_rate
+categorical,280,262,194,68,18,0.7404580152671756
+numeric,560,560,494,66,0,0.8821428571428571
+temporal,540,540,540,0,0,1.0

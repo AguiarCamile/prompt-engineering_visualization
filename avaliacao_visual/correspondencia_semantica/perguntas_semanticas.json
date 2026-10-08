@@ -1,0 +1,206 @@
+{
+  "LI": [
+    [
+      "LI-01",
+      "Valor desembolsado em 2018"
+    ],
+    [
+      "LI-02",
+      "Valor desembolsado em 2020"
+    ],
+    [
+      "LI-03",
+      "Valor desembolsado em 2024"
+    ],
+    [
+      "LI-04",
+      "Ano com maior desembolso"
+    ],
+    [
+      "LI-05",
+      "Ano com menor desembolso"
+    ],
+    [
+      "LI-06",
+      "2024 apresenta valor maior que 2025?"
+    ],
+    [
+      "LI-07",
+      "2018 apresenta valor maior que 2019?"
+    ],
+    [
+      "LI-08",
+      "Intervalo de maior aumento consecutivo"
+    ]
+  ],
+  "LC": [
+    [
+      "LC-01",
+      "Valor da Operação em 2018"
+    ],
+    [
+      "LC-02",
+      "Valor Desembolsado em 2024"
+    ],
+    [
+      "LC-03",
+      "Valor da Operação em 2025"
+    ],
+    [
+      "LC-04",
+      "Maior série em 2024"
+    ],
+    [
+      "LC-05",
+      "Maior série em 2025"
+    ],
+    [
+      "LC-06",
+      "Anos dos máximos das duas séries"
+    ],
+    [
+      "LC-07",
+      "Ano de maior diferença entre séries"
+    ],
+    [
+      "LC-08",
+      "As séries mudam na mesma direção de 2024 para 2025?"
+    ]
+  ],
+  "BI": [
+    [
+      "BI-01",
+      "Operação em Infraestrutura"
+    ],
+    [
+      "BI-02",
+      "Operação em Comércio/Serviços"
+    ],
+    [
+      "BI-03",
+      "Operação em Agropecuária"
+    ],
+    [
+      "BI-04",
+      "Setor de maior valor"
+    ],
+    [
+      "BI-05",
+      "Setor de menor valor"
+    ],
+    [
+      "BI-06",
+      "Comércio/Serviços é maior que Indústria?"
+    ],
+    [
+      "BI-07",
+      "Ordenação decrescente dos setores"
+    ],
+    [
+      "BI-08",
+      "Setor acima de 600 milhões"
+    ]
+  ],
+  "BC": [
+    [
+      "BC-01",
+      "Operação em Comércio e Serviços"
+    ],
+    [
+      "BC-02",
+      "Desembolso em Comércio e Serviços"
+    ],
+    [
+      "BC-03",
+      "Operação em Indústria de Transformação"
+    ],
+    [
+      "BC-04",
+      "Maior medida em Agropecuária e Pesca"
+    ],
+    [
+      "BC-05",
+      "Maior medida em Indústria de Transformação"
+    ],
+    [
+      "BC-06",
+      "Categoria com maior Operação"
+    ],
+    [
+      "BC-07",
+      "Ranking do Desembolso"
+    ],
+    [
+      "BC-08",
+      "Operação é maior que Desembolso em todas as categorias?"
+    ]
+  ],
+  "SI": [
+    [
+      "SI-01",
+      "Operação em juros de 10,69%"
+    ],
+    [
+      "SI-02",
+      "Operação em juros de 8,93%"
+    ],
+    [
+      "SI-03",
+      "Operação em juros de 4,03%"
+    ],
+    [
+      "SI-04",
+      "Taxa associada ao maior valor"
+    ],
+    [
+      "SI-05",
+      "Maior taxa representada"
+    ],
+    [
+      "SI-06",
+      "Operação em 8,93% é maior que em 4,03%?"
+    ],
+    [
+      "SI-07",
+      "Ranking entre 10,69%, 8,93% e 4,03%"
+    ],
+    [
+      "SI-08",
+      "Entre taxas >12%, qual apresenta maior Operação?"
+    ]
+  ],
+  "SC": [
+    [
+      "SC-01",
+      "Operação em 10,69%"
+    ],
+    [
+      "SC-02",
+      "Desembolso em 8,93%"
+    ],
+    [
+      "SC-03",
+      "Desembolso em 10,69%"
+    ],
+    [
+      "SC-04",
+      "Maior medida em 10,69%"
+    ],
+    [
+      "SC-05",
+      "Em 10,14%, Operação é maior que Desembolso?"
+    ],
+    [
+      "SC-06",
+      "Taxas dos máximos das duas medidas"
+    ],
+    [
+      "SC-07",
+      "Existe alguma taxa em que Operação > Desembolso?"
+    ],
+    [
+      "SC-08",
+      "Taxa com maior diferença Operação–Desembolso"
+    ]
+  ]
+}
