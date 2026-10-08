@@ -1,0 +1,21 @@
+ARQUIVOS/CÓDIGOS AINDA FALTANTES OU NÃO CONFIRMADOS — PACOTE V4
+==========================================================================
+
+01. wrapper de produção V5.1 dos eixos
+    Código que aplicou o detector de eixos às 3.120 imagens; nome físico ainda não recuperado.
+
+02. wrapper de produção V5 de presença dos tick labels
+    Código de produção integral da presença dos tick labels; nome físico ainda não recuperado.
+
+03. script de pós-processamento final da cor
+    O CSV final foi recuperado, mas o programa específico que aplicou o limiar final ΔE00≤2 ainda não foi identificado.
+
+04. script(s) B-B numérico/temporal
+    Comparação entre B-A V7 e F, incluindo regras de normalização e adjudicações.
+
+05. script(s) B-B categórico
+    Comparação categórica final com F usando B_B_NORMALIZATION_V1.
+
+06. script final de integração V4
+    O CSV MASTER_V4_FINAL foi recuperado, mas o código exato que o gerou ainda precisa ser confirmado se for distinto de integrar_fontes_por_imagem_v2.py.
+

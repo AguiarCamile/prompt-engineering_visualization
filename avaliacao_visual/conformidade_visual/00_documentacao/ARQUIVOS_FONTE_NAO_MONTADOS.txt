@@ -1,0 +1,54 @@
+ARQUIVOS DE CÓDIGO AINDA NÃO MONTADOS NESTE AMBIENTE
+==================================================================
+
+Os três arquivos enviados posteriormente pelo usuário foram recuperados,
+verificados por SHA-256 e incorporados ao pacote V2.
+
+01. visual_features_v4_plot_area_v6.py
+    Função: Detector auxiliar da área de plotagem.
+
+02. wrapper de produção V5.1 dos eixos
+    Função: Aplicação final do detector às 3.120 imagens.
+
+03. ticklabel_presence_calibration_v4.py
+    Função: Detector congelado de presença dos tick labels.
+
+04. wrapper de produção V5 de presença dos tick labels
+    Função: Aplicação final + fila de revisão.
+
+05. wrapper de produção V5 de presença da marca
+    Função: Aplicação final do detector às 3.120 imagens.
+
+06. chart_type_multiclass_validation_v1.py
+    Função: Desenvolvimento do classificador de técnica.
+
+07. chart_type_exclusive_holdout_v2.py
+    Função: Holdout independente do classificador exclusivo.
+
+08. audit_absent_chart_types_v1.py
+    Função: Auditoria dos casos MARK_ABSENT.
+
+09. color_conformity_v4.py
+    Função: Orquestrador da avaliação cromática.
+
+10. validate_color_bars_core_v5.py
+    Função: Módulo final de cor para barras.
+
+11. L-Cor V4 / script físico de linhas
+    Função: Módulo final de cor para linhas; nome físico ainda precisa ser confirmado.
+
+12. validate_color_scatter_v7_markercore_final.py
+    Função: Módulo final de cor para scatterplots.
+
+13. validate_color_scatter_holdout_v8.py
+    Função: Holdout cromático de scatterplots.
+
+14. ticklabel_content_extraction_holdout_ba_v7_frozen.py
+    Função: Holdout independente B-A V7.
+
+15. ticklabel_content_extraction_production_ba_v7_frozen.py
+    Função: Runner B-A V7 para 3.120 imagens.
+
+16. scripts automáticos B-B de conteúdo
+    Função: Comparação observação × F; nem todos os fontes estão montados.
+

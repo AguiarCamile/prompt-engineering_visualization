@@ -1,0 +1,20 @@
+PENDÊNCIA RESIDUAL — PACOTE V5
+================================
+
+Após a recuperação dos módulos de produção, validação, auditoria e consolidação,
+resta apenas uma pendência de proveniência:
+
+- código-fonte ORIGINAL que produziu
+  INTEGRACAO_CONFORMIDADE_VISUAL_MASTER_V4_FINAL.csv
+
+O arquivo final V4 está preservado no pacote, assim como:
+- INTEGRACAO_CONFORMIDADE_VISUAL_MASTER_V2.csv;
+- INTEGRACAO_CONFORMIDADE_VISUAL_MASTER_V3.csv;
+- resultados finais de técnica;
+- resultados finais de conteúdo de ticks;
+- resultados finais das demais dimensões.
+
+Não foi criado nem apresentado como "original" nenhum script reconstruído.
+Caso seja necessário, pode-se produzir posteriormente um integrador de
+reprodução, explicitamente rotulado como reconstruído, e compará-lo linha a
+linha com o MASTER V4 FINAL.

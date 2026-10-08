@@ -1,0 +1,30 @@
+ARQUIVOS/CÓDIGOS AINDA FALTANTES OU NÃO CONFIRMADOS — PACOTE V3
+==========================================================================
+
+01. wrapper de produção V5.1 dos eixos
+    Aplicação do detector V3 às 3.120 imagens; o nome físico do .py ainda não foi recuperado.
+
+02. wrapper de produção V5 de presença dos tick labels
+    Aplicação do detector V4 às 3.120 imagens e geração da fila de revisão.
+
+03. wrapper de produção V5 de presença da marca
+    Aplicação final do detector V3 às 3.120 imagens. O CSV final foi recuperado, mas o wrapper ainda não.
+
+04. validate_color_lines_v4.py
+    É o módulo que color_conformity_v4.py importa explicitamente para L-Cor. O arquivo enviado como validate_color_lines_v3.py é uma versão anterior e não é substituto seguro.
+
+05. color_conformity_config.json
+    Configuração padrão exigida por color_conformity_v4.py, contendo palette_F e expected_colors_by_profile.
+
+06. script de pós-processamento final da cor
+    Código que aplicou a regra final ΔE00≤2 e gerou color_conformity_final_images.csv; a configuração final é conhecida, mas o fonte executor ainda não foi recuperado.
+
+07. script(s) B-B numérico/temporal
+    Código que compara a saída B-A V7 com F e produz o resultado B-B final; planilhas/resultados existem, mas o(s) fonte(s) ainda precisam ser confirmados.
+
+08. script(s) B-B categórico
+    Código que compara a adjudicação categórica com F usando B_B_NORMALIZATION_V1; resultado final existe, fonte executor precisa ser confirmado.
+
+09. script final de integração V4
+    Código que gerou INTEGRACAO_CONFORMIDADE_VISUAL_MASTER_V4_FINAL.csv e aplicou a regra estrita global, caso seja distinto do integrar_fontes_por_imagem_v2.py.
+

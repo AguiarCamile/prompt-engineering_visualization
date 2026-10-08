@@ -1,0 +1,82 @@
+{
+  "version": "B_B_NORMALIZATION_V1",
+  "status": "FROZEN",
+  "general": {
+    "case_insensitive": true,
+    "accent_insensitive": true,
+    "normalize_whitespace": true,
+    "fuzzy_matching": false,
+    "unevaluable_never_becomes_nonconforming": true,
+    "not_specified_not_evaluated": true
+  },
+  "categorical": {
+    "orthographic_hyphen_equivalent": true,
+    "slash_as_conjunction_e": {
+      "enabled": true,
+      "only_if_same_lexical_terms": true,
+      "categorical_text_only": true
+    },
+    "arrow_as_conjunction": false,
+    "semantic_synonyms": false
+  },
+  "numeric": {
+    "decimal_comma_dot_equivalent_if_unambiguous": true,
+    "thousands_separator_normalize_if_unambiguous": true,
+    "percentage_decimal_equivalent": false,
+    "significant_sign": true,
+    "implicit_numeric_tolerance": false,
+    "rounding": {
+      "allowed": true,
+      "status": "ROUNDING_EQUIVALENT",
+      "must_be_mathematically_correct": true
+    },
+    "units": {
+      "K": [
+        "K",
+        "mil"
+      ],
+      "M": [
+        "M",
+        "milhao",
+        "milhoes"
+      ],
+      "B": [
+        "B",
+        "bilhao",
+        "bilhoes"
+      ],
+      "same_quantity_different_unit": "VALUE_EQUIVALENT_WITH_DIFFERENT_UNIT"
+    }
+  },
+  "currency": {
+    "redundant_symbol_allowed_if_globally_defined": true,
+    "missing_symbol_allowed_if_globally_defined_and_not_explicitly_required": true,
+    "conflicting_currency_nonconforming": true
+  },
+  "list_order": {
+    "tick_list_scope_values": [
+      "EXHAUSTIVE",
+      "EXAMPLES_ONLY",
+      "NOT_SPECIFIED"
+    ],
+    "missing_extra_duplicate_scored_only_when_exhaustive": true,
+    "order_only_scored_when_explicitly_required": true,
+    "different_order_without_order_requirement": "CONFORMING_DIFFERENT_ORDER"
+  },
+  "detailed_statuses": [
+    "EXACT",
+    "NORMALIZED_EQUIVALENT",
+    "ROUNDING_EQUIVALENT",
+    "VALUE_EQUIVALENT",
+    "CONFORMING_DIFFERENT_ORDER",
+    "NONCONFORMING_MISSING",
+    "NONCONFORMING_EXTRA",
+    "NONCONFORMING_DUPLICATE",
+    "NONCONFORMING_VALUE",
+    "CONTENT_CONFORMING_ORDER_NONCONFORMING",
+    "CONTENT_CONFORMING_FORMAT_NONCONFORMING",
+    "AMBIGUOUS_REVIEW",
+    "UNEVALUABLE",
+    "NOT_EVALUATED"
+  ]
+}

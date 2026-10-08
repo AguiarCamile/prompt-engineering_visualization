@@ -1,0 +1,21 @@
+ARQUIVOS RECUPERADOS E VERIFICADOS POR SHA-256
+=========================================================
+
+axis_conformity_calibration_v3.py
+  SHA-256: 1582555adf23d8ed2a6b23e89eaefdcd317d0e11a2f7d361fbd69c6258866bfe
+  Caminho no ZIP: 07_eixos/axis_conformity_calibration_v3.py
+  Verificação: COINCIDE EXATAMENTE com o hash esperado do pipeline.
+
+mark_presence_validation_v3.py
+  SHA-256: 8f33f4daa7e8f1cc8feba58e5ea5f80bc75639334f9e64cf6339408152bc78a2
+  Caminho no ZIP: 08_presenca_marca/mark_presence_validation_v3.py
+  Verificação: COINCIDE EXATAMENTE com o hash esperado do pipeline.
+
+ticklabel_content_extraction_calibration_ba_v7.py
+  SHA-256: 21423b59ce40eb351693f00b6a197936d936fe53131467f47c1031da864fd688
+  Caminho no ZIP: 03_conteudo_ticks/01_numerico_temporal/ticklabel_content_extraction_calibration_ba_v7.py
+  Verificação: COINCIDE EXATAMENTE com o hash esperado do pipeline.
+
+Observação: mark_presence_validation_v3.py também foi duplicado em
+02_tecnica_grafica/00_dependencias/ por ser dependência direta do
+classificador exclusivo de técnica.

@@ -1,0 +1,33 @@
+INTEGRAÇÃO DA CONFORMIDADE VISUAL — MASTER V4 FINAL
+========================================================================
+
+PRESENÇA DA MARCA — APÓS ADJUDICAÇÃO CEGA DOS ANTIGOS MARK_ABSENT
+CONFORMING: 3092
+NONCONFORMING: 25
+UNEVALUABLE: 3
+Taxa entre avaliáveis: 99.1979%
+
+TÉCNICA
+CONFORMING: 3072
+NONCONFORMING: 25
+UNEVALUABLE: 3
+UNEVALUABLE_SPEC_CONFLICT: 20
+Taxa entre avaliáveis: 99.1928%
+
+OVERALL ESTRITO NAS DIMENSÕES FECHADAS
+Escopo: presença da marca, presença dos eixos, cor, presença dos tick labels,
+técnica e conteúdo dos tick labels. Área de plotagem permanece diagnóstica.
+CONFORMING: 2676
+NONCONFORMING: 405
+UNEVALUABLE: 19
+UNEVALUABLE_SPEC_CONFLICT: 20
+Avaliáveis: 3081
+Taxa global estrita entre avaliáveis: 86.8549%
+
+POR PERFIL — OVERALL:
+BI: C=391; NC=122; U=7; U_SPEC=0; taxa=76.2183%
+BC: C=383; NC=129; U=8; U_SPEC=0; taxa=74.8047%
+LI: C=471; NC=48; U=1; U_SPEC=0; taxa=90.7514%
+LC: C=469; NC=49; U=2; U_SPEC=0; taxa=90.5405%
+SI: C=491; NC=28; U=1; U_SPEC=0; taxa=94.6050%
+SC: C=471; NC=29; U=0; U_SPEC=20; taxa=94.2000%

@@ -1,0 +1,23 @@
+ATUALIZAÇÃO V4 — CORREÇÃO DO PACOTE
+
+O pacote V3 continha apenas o resumo textual da integração final e NÃO incluía
+o arquivo CSV mestre.
+
+Nesta V4 foi incluído explicitamente:
+
+12_integracao_final/INTEGRACAO_CONFORMIDADE_VISUAL_MASTER_V4_FINAL.csv
+
+Verificações:
+- linhas: 3120
+- colunas: 32
+- CONFORMING: 2676
+- NONCONFORMING: 405
+- UNEVALUABLE: 19
+- UNEVALUABLE_SPEC_CONFLICT: 20
+
+Também foram incorporados:
+- mark_presence_full_v5.py
+- validate_color_lines_v4.py
+- color_conformity_config.json
+- color_conformity_final_images.csv
+- versões finais dos módulos cromáticos disponíveis

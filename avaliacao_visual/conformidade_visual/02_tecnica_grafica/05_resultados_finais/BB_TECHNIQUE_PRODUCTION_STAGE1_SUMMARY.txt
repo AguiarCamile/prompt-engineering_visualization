@@ -1,0 +1,23 @@
+TÉCNICA GRÁFICA — PRODUÇÃO — ESTÁGIO 1 APÓS AUDITORIA DOS 55
+========================================================================
+Auditoria dos 55 discrepantes: {'CONFORMING': 27, 'NONCONFORMING': 25, 'UNEVALUABLE': 3}
+
+CONFORMING (incluindo auto-matches ainda não amostrados): 3072
+NONCONFORMING: 25
+UNEVALUABLE B-A: 3
+UNEVALUABLE_SPEC_CONFLICT: 20
+Avaliáveis normativos: 3097
+Taxa provisória entre avaliáveis: 99.1928%
+
+POR PERFIL:
+BI: C=514; NC=6; U=0; U_SPEC=0; taxa=98.8462%
+BC: C=510; NC=7; U=3; U_SPEC=0; taxa=98.6460%
+LI: C=510; NC=10; U=0; U_SPEC=0; taxa=98.0769%
+LC: C=518; NC=2; U=0; U_SPEC=0; taxa=99.6154%
+SI: C=520; NC=0; U=0; U_SPEC=0; taxa=100.0000%
+SC: C=500; NC=0; U=0; U_SPEC=20; taxa=100.0000%
+
+OBSERVAÇÃO:
+- a taxa acima é ESTÁGIO 1, pois os 3.045 auto-matches ainda não foram
+  submetidos a uma amostra de controle de falsos conformes;
+- os 55 auto-discrepantes foram todos adjudicados manualmente às cegas.

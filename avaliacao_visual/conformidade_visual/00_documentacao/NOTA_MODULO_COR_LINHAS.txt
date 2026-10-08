@@ -1,0 +1,13 @@
+NOTA SOBRE O MÓDULO DE COR PARA GRÁFICOS DE LINHAS
+
+O arquivo recebido como `validate_color_lines_v3.py` foi preservado no pacote,
+mas NÃO foi promovido a módulo final.
+
+Motivo:
+- `color_conformity_v4.py` importa explicitamente `validate_color_lines_v4`;
+- o arquivo recebido se identifica internamente como validação L-Cor V3;
+- a função `extract_line_color_families` do arquivo recebido não possui o
+  parâmetro `include_derived=True` exigido pelo orquestrador final.
+
+Portanto, renomear esse arquivo para V4 poderia alterar ou quebrar a reprodução.
+A versão física `validate_color_lines_v4.py` ainda deve ser recuperada.

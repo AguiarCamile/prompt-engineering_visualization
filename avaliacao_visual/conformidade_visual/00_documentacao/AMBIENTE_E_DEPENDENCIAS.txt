@@ -1,0 +1,23 @@
+AMBIENTE E DEPENDÊNCIAS PRINCIPAIS
+===================================
+Python 3.x
+
+Pacotes Python observados nos códigos:
+- numpy
+- pandas
+- Pillow
+- opencv-python
+- pytesseract
+
+Módulos da biblioteca padrão usados:
+pathlib, argparse, csv, hashlib, re, json, math, random, shutil,
+unicodedata, collections, difflib, tkinter, os, sys.
+
+OCR externo usado no experimento:
+- Tesseract OCR 5.4.0.20240606
+- idiomas: por+eng
+
+Para congelar exatamente o ambiente original no computador do experimento:
+    cd /d C:\Users\Labvis\Downloads\imagens3120
+    .venv\Scripts\activate.bat
+    pip freeze > requirements_frozen_original.txt

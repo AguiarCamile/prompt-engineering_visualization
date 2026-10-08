@@ -1,0 +1,21 @@
+PACOTE DE CÓDIGOS — CONFORMIDADE VISUAL — V5
+==============================================
+
+Atualização principal em relação à V4:
+- axis_presence_full_v5_1.py recuperado;
+- ticklabel_presence_full_v5_fixed.py recuperado;
+- color_conformity_postprocess_v1.py + color_postprocess_config.json recuperados;
+- bb_tick_content_production_v1.py recuperado;
+- protocolo/README da produção B-B incorporados;
+- chart_type_exclusive_production_v2_frozen.py e revisores de técnica atualizados;
+- resultados finais/auditados de técnica incorporados;
+- resultados finais auditados de conteúdo de ticks incorporados;
+- MASTER V2, MASTER V3 e MASTER V4 FINAL preservados para rastreabilidade.
+
+Pendência residual:
+- somente o fonte ORIGINAL do integrador que gerou o MASTER V4 FINAL.
+
+Observação:
+- versões anteriores e históricas são mantidas em pastas explicitamente
+  identificadas quando úteis para auditoria;
+- os arquivos finais/canônicos são mantidos em pastas de produção/final.

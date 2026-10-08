@@ -1,0 +1,154 @@
+PRODUÇÃO — CONTEÚDO DOS TICKS NAS 3.120 IMAGENS
+===============================================
+
+Objetivo
+========
+Executar a etapa de conformidade B-B do conteúdo dos ticks nas 3.120 imagens,
+preservando integralmente os artefatos já congelados e a separação entre:
+
+F = alvo normativo derivado do prompt/especificação
+B-A = conteúdo visível extraído da imagem
+B-B = comparação entre B-A e F
+
+Artefatos congelados
+====================
+1. F_MASTER_V4_TICK_SCOPE_ADJUDICATED.xlsx
+   - contém as listas de ticks e o escopo de avaliação.
+   - incorpora as 12 adjudicações de F aprovadas:
+     * 8 casos de duplicação de 150M;
+     * 4 casos de token 800M0.
+
+2. B_B_NORMALIZATION_V1.json
+   - registra as equivalências permitidas.
+   - não deve ser alterado antes da produção.
+
+3. B-A categórico congelado:
+   - lógica final validada na família BA_CAT_V9.
+
+4. B-A temporal/numérico congelado:
+   - lógica final validada na família BA_V7.
+
+Fonte de verdade
+================
+A conformidade é sempre avaliada contra o que foi formalmente especificado ao
+modelo (F), nunca contra o que apareceu incidentalmente nas imagens de
+referência, nas imagens geradas ou em scripts auxiliares.
+
+Conjunto de imagens
+===================
+Usar exclusivamente:
+C:\Users\Labvis\Downloads\imagens3120\imagens
+
+Regras:
+- usar somente os 3.120 PNG da RAIZ;
+- não fazer varredura recursiva nas subpastas temáticas;
+- nomes esperados:
+  XX_999_R99.png
+  Ex.: BI_047_R09.png
+
+Fluxo recomendado
+=================
+ETAPA 0 — PREFLIGHT
+-------------------
+Verificar:
+- presença das 3.120 imagens;
+- integridade do padrão de nomenclatura;
+- distribuição esperada:
+  * 312 unidades;
+  * 10 repetições por unidade;
+  * 6 perfis;
+  * 4 condições;
+- presença dos artefatos congelados.
+
+ETAPA 1 — B-A CATEGÓRICO EM PRODUÇÃO
+------------------------------------
+Rodar a versão congelada de produção do extrator categórico em todas as
+imagens dos perfis BI e BC (e somente nelas, se essa for a cobertura prevista).
+
+Saídas mínimas esperadas:
+- ba_cat_production_images.csv
+- ba_cat_production_priority_review.csv
+- ba_cat_production_candidates.csv
+- ba_cat_production_errors.csv
+- ba_cat_production_summary.txt
+
+ETAPA 2 — B-A TEMPORAL/NUMÉRICO EM PRODUÇÃO
+-------------------------------------------
+Rodar a versão congelada de produção do extrator B-A V7 em todas as imagens
+da RAIZ.
+
+Saídas mínimas esperadas:
+- ticklabel_ba_v7_production_images.csv
+- ticklabel_ba_v7_production_axes.csv
+- ticklabel_ba_v7_production_priority_review.csv
+- ticklabel_ba_v7_production_errors.csv
+- ticklabel_ba_v7_production_summary.txt
+
+Observação:
+A etapa B-A continua sendo observacional. Ela não julga conformidade com F.
+
+ETAPA 3 — CONSOLIDAÇÃO B-B
+--------------------------
+Comparar:
+- BA categórico consolidado
+- BA V7 final (temporal + numérico)
+- F_MASTER_V4
+- B_B_NORMALIZATION_V1
+
+A comparação B-B só entra quando:
+- F estiver EXHAUSTIVE e READY;
+- o B-A estiver utilizável para comparação.
+
+Saídas mínimas da produção B-B:
+- bb_tick_content_production_v1.csv
+- bb_tick_content_production_summary_by_kind.csv
+- bb_tick_content_production_summary_by_profile_axis.csv
+- bb_tick_content_production_cases_review.csv
+- bb_tick_content_production_v1.xlsx
+
+ETAPA 4 — CONTROLE DE QUALIDADE
+-------------------------------
+Verificar:
+- contagens por perfil;
+- contagens por eixo e tipo;
+- denominadores elegíveis;
+- proporção de CONFORMING / NONCONFORMING / UNEVALUABLE;
+- casos prioritários para inspeção manual final.
+
+Pontos metodológicos congelados
+===============================
+1. EXAMPLES_ONLY não entra no denominador de completude.
+2. NOT_SPECIFIED não entra no denominador de completude.
+3. Somente F EXHAUSTIVE + READY entra em B-B.
+4. Nenhuma imagem é usada para adjudicar o significado de F.
+5. Ajustes manuais em F só foram permitidos pela coerência interna do prompt.
+6. Diferenças não cobertas por B_B_NORMALIZATION_V1 permanecem não conformes.
+7. No numérico, rótulos de pontos não substituem ticks do eixo.
+8. O uso de unidade (M, K, %, etc.) deve ser observado visualmente; não pode
+   ser inferido apenas do esperado em F.
+
+Comando geral recomendado
+=========================
+No Prompt de Comando:
+
+cd /d C:\Users\Labvis\Downloads\imagens3120
+.venv\Scripts\activate.bat
+
+Ordem de execução:
+1. python preflight_producao_ticks_3120.py
+2. [rodar B-A categórico congelado em produção]
+3. [rodar B-A temporal/numérico congelado em produção]
+4. python bb_tick_content_production_v1.py ^
+      --f-master F_MASTER_V4_TICK_SCOPE_ADJUDICATED.xlsx ^
+      --normalization B_B_NORMALIZATION_V1.json ^
+      --ba-cat BA_CATEGORICAL_PRODUCTION_CONSOLIDATED.csv ^
+      --ba-v7-final ticklabel_ba_v7_production_final.csv ^
+      --ba-v7-axes ticklabel_ba_v7_production_axes.csv
+
+Observação final
+================
+A execução em produção só deve começar depois de confirmado que:
+- a F está congelada (sim);
+- a normalização está congelada (sim);
+- o piloto B-B foi validado manualmente (sim);
+- os scripts B-A usados em produção são exatamente as versões congeladas.

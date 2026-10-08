@@ -1,0 +1,31 @@
+TÉCNICA GRÁFICA — RESULTADO FINAL AUDITADO
+========================================================================
+
+VALIDAÇÃO DO CLASSIFICADOR
+Holdout cego: 57 MATCH / 59 avaliáveis = 96,61%
+Controle de falsos conformes: 120/120 confirmados visualmente
+Falsos conformes observados na amostra de controle: 0/120 = 0,00%
+Limite superior unilateral aproximado de 95% para p, sob modelo binomial simples: 2.47%
+
+RESULTADO FINAL DA DIMENSÃO TÉCNICA
+CONFORMING: 3072
+NONCONFORMING: 25
+UNEVALUABLE: 3
+UNEVALUABLE_SPEC_CONFLICT: 20
+Avaliáveis normativos: 3097
+Taxa final entre avaliáveis: 99.1928%
+
+POR PERFIL:
+BI: C=514; NC=6; U=0; U_SPEC=0; taxa=98.8462%
+BC: C=510; NC=7; U=3; U_SPEC=0; taxa=98.6460%
+LI: C=510; NC=10; U=0; U_SPEC=0; taxa=98.0769%
+LC: C=518; NC=2; U=0; U_SPEC=0; taxa=99.6154%
+SI: C=520; NC=0; U=0; U_SPEC=0; taxa=100.0000%
+SC: C=500; NC=0; U=0; U_SPEC=20; taxa=100.0000%
+
+DECISÃO METODOLÓGICA:
+- a dimensão técnica pode ser considerada FINAL/CLOSED;
+- os limiares V2 permaneceram congelados;
+- nenhuma recalibração foi feita com base no holdout ou na amostra de controle;
+- a amostra 120/120 sem falsos conformes fornece evidência adicional de
+  especificidade dos casos automaticamente classificados como conformes.

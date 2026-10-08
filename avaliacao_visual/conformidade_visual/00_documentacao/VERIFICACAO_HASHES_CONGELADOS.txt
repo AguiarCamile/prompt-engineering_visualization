@@ -1,0 +1,20 @@
+OK  axis_conformity_calibration_v3.py
+  esperado: 1582555adf23d8ed2a6b23e89eaefdcd317d0e11a2f7d361fbd69c6258866bfe
+  atual:    1582555adf23d8ed2a6b23e89eaefdcd317d0e11a2f7d361fbd69c6258866bfe
+
+OK  mark_presence_validation_v3.py
+  esperado: 8f33f4daa7e8f1cc8feba58e5ea5f80bc75639334f9e64cf6339408152bc78a2
+  atual:    8f33f4daa7e8f1cc8feba58e5ea5f80bc75639334f9e64cf6339408152bc78a2
+
+OK  ticklabel_presence_calibration_v4.py
+  esperado: d15c325290c7596632f9f4c62d907e7a78d0a794862b690c4c4691ed87ea86b2
+  atual:    d15c325290c7596632f9f4c62d907e7a78d0a794862b690c4c4691ed87ea86b2
+
+OK  ticklabel_content_extraction_calibration_ba_v7.py
+  esperado: 21423b59ce40eb351693f00b6a197936d936fe53131467f47c1031da864fd688
+  atual:    21423b59ce40eb351693f00b6a197936d936fe53131467f47c1031da864fd688
+
+OK  ticklabel_content_extraction_holdout_ba_v7_frozen.py
+  esperado: ebadeafb4c6a956bb0ca5741eb6de5a15dc0487336a9780620ad0768b907913e
+  atual:    ebadeafb4c6a956bb0ca5741eb6de5a15dc0487336a9780620ad0768b907913e
+
